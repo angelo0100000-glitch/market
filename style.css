@@ -1,0 +1,276 @@
+/* ================= VARIABLES PRO ================= */
+:root {
+    --accent: #e31d2b; /* Un rojo Perú vibrante y puro */
+    --accent-light: #ff6b6b;
+    --bg-white: #ffffff;
+    --bg-light-peru: #fff5f5; /* Sfondo chiarissimo per il pattern lama */
+    --glass-white: rgba(255, 255, 255, 0.7); /* Glass sutil en Light Mode */
+    --text-dark: #1e293b;
+    --text-muted: #64748b;
+    --border-light: rgba(227, 29, 43, 0.1); /* Borde rojo muy sutil */
+}
+
+/* ================= RESET & BASE ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-white);
+    color: var(--text-dark);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Fondo Dinámico con Lamas (Pro & Minimalista) */
+.bg-base {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--bg-white);
+    z-index: -2;
+}
+
+.llama-pattern {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    opacity: 0.1; /* Sutilissimo */
+    /* PATTERN SVG INTEGRATO: Tante piccole fiamme bianche/grigie */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill='%23e31d2b' fill-opacity='0.1'%3E%3Cpath d='M25 75 Q 30 80, 50 75 L 50 50 Q 50 35, 40 35 Q 30 35, 30 50 Z' /%3E%3Ccircle cx='40' cy='37.5' r='7.5' /%3E%3Crect x='36' y='28' width='3' height='7' rx='1.5' /%3E%3Crect x='41' y='28' width='3' height='7' rx='1.5' /%3E%3Ccircle cx='37' cy='36' r='1' fill='black'/%3E%3Cpath d='M36 41 Q 40 44 44 41' fill='none' stroke='black' stroke-width='0.7'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat;
+    z-index: -1;
+    animation: moveBg 30s linear infinite;
+}
+
+@keyframes moveBg { from { background-position: 0 0; } to { background-position: 1000px 1000px; } }
+
+/* ================= HERO SECTION ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.hero h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(3rem, 12vw, 9rem); /* Dinamico su schermi diversi */
+    text-transform: uppercase;
+    line-height: 0.85;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--accent);
+    /* Effetto 'Outline' Pro per innovazione */
+    -webkit-text-stroke: 2px var(--accent);
+    color: transparent;
+}
+
+.hero-badge {
+    background: var(--accent);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(227, 29, 43, 0.3);
+}
+
+.impact-phrase {
+    font-size: 1.5rem;
+    color: var(--text-dark);
+    font-weight: 300;
+    margin-top: 15px;
+}
+
+/* ================= BENTO GRID PRESENTATION ================= */
+.container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 50px 20px;
+}
+
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+    gap: 25px;
+}
+
+.bento-item {
+    background: var(--glass-white);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(10px); /* Glassmorphism light */
+    border-radius: 35px;
+    padding: 35px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.main-img {
+    grid-column: span 2;
+    grid-row: span 2;
+    padding: 0;
+    position: relative;
+}
+
+.main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: var(--glass-white);
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+.bento-item.info h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+.bento-item.info p {
+    color: var(--text-muted);
+}
+
+.bento-item.stat .number {
+    font-family: 'Syne', sans-serif;
+    font-size: 5rem;
+    font-weight: 800;
+    color: var(--accent);
+}
+
+.bento-item.stat .label {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-muted);
+}
+
+/* ================= MODERN PRODUCT GRID (Vetrina) ================= */
+.products-section {
+    padding-top: 100px;
+}
+
+.section-title {
+    font-family: 'Syne', sans-serif;
+    text-align: center;
+    font-size: 3.5rem;
+    color: var(--text-dark);
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    width: 80px;
+    height: 6px;
+    background: var(--accent);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+.modern-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.modern-card {
+    background: var(--bg-white);
+    border: 1px solid var(--border-light);
+    border-radius: 28px;
+    padding: 35px;
+    text-align: center;
+    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+}
+
+.modern-card:hover {
+    transform: translateY(-15px) scale(1.03);
+    border-color: var(--accent);
+    box-shadow: 0 25px 50px rgba(227, 29, 43, 0.15);
+}
+
+.modern-card .emoji {
+    font-size: 5rem;
+    margin-bottom: 25px;
+    display: block;
+}
+
+.modern-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+}
+
+.modern-card .price {
+    color: var(--accent);
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    margin-top: 100px;
+    padding-bottom: 40px;
+}
+
+.footer-glass {
+    padding: 50px;
+    background: var(--glass-white);
+    border: 1px solid var(--border-light);
+    backdrop-filter: blur(20px);
+    border-radius: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    text-align: center;
+}
+
+.c-item {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.c-item span {
+    color: var(--accent);
+    margin-right: 10px;
+    font-size: 1.4rem;
+}
+
+.main-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Questo fa sì che l'immagine si adatti perfettamente senza deformarsi */
+    border-radius: 35px;
+}
