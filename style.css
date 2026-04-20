@@ -274,3 +274,31 @@ footer {
     object-fit: cover; /* Questo fa sì che l'immagine si adatti perfettamente senza deformarsi */
     border-radius: 35px;
 }
+
+/* Estilo especial para las ofertas */
+.offer-card {
+    border: 2px solid var(--accent) !important; /* Borde rojo más fuerte */
+    background: linear-gradient(145deg, #ffffff, #fffafa);
+    position: relative;
+    overflow: hidden;
+}
+
+.offer-card::before {
+    content: 'OFERTA';
+    position: absolute;
+    top: 10px;
+    right: -20px;
+    background: var(--accent);
+    color: white;
+    padding: 5px 30px;
+    transform: rotate(45deg);
+    font-size: 0.7rem;
+    font-weight: 800;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-right: 10px;
+}
