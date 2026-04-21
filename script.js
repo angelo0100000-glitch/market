@@ -2,7 +2,7 @@
 const vetrinaProductos = [
     { nombre: "Coca Cola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Ají Amarillo", desc: "El alma andina", price: "€ 4.00", img: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=400&auto=format&fit=crop" },
-    { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://www.bernabei.it/ARTICOLI/L_11386.png=crop" },
+    { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://images.unsplash.com/photo-1597188446702-9b16067ad718?q=80&w=676&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D=crop" },
     { nombre: "Café Altomayo", desc: "Sabor de altura", price: "€ 7.50", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Chocolate Sublime", desc: "Cacao Puro", price: "€ 3.00", img: "https://images.unsplash.com/photo-1548907040-4baa42d10919?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Arroz Real", desc: "Súper alimento", price: "€ 6.50", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=400&auto=format&fit=crop" },
