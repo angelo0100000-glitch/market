@@ -199,45 +199,77 @@ body {
     border-radius: 3px;
 }
 
+/* --- SEZIONE VETRINA PRODOTTI (VERSIONE PC) --- */
+
 .modern-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    /* Su PC: i prodotti si adattano riempiendo lo spazio (circa 4-5 per riga) */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 30px;
+    padding: 20px 0;
 }
 
 .modern-card {
-    background: var(--bg-white);
-    border: 1px solid var(--border-light);
-    border-radius: 28px;
-    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    padding: 25px;
     text-align: center;
-    transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    border: 1px solid rgba(0,0,0,0.05);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* Assicuriamoci che le card abbiano un'altezza minima armoniosa */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .modern-card:hover {
-    transform: translateY(-15px) scale(1.03);
-    border-color: var(--accent);
-    box-shadow: 0 25px 50px rgba(227, 29, 43, 0.15);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: #e31d2b; /* Colore rosso Perù */
 }
 
-.modern-card .emoji {
-    font-size: 5rem;
-    margin-bottom: 25px;
-    display: block;
+/* Contenitore per le immagini caricate da Google/Unsplash */
+.product-img-container {
+    width: 100%;
+    height: 180px; /* Altezza ideale per PC */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    background: #f8f9fa;
+}
+
+.prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Fondamentale: non deforma le immagini */
+    transition: transform 0.5s ease;
+}
+
+.modern-card:hover .prod-img {
+    transform: scale(1.1); /* Effetto zoom molto moderno al passaggio del mouse */
 }
 
 .modern-card h3 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.6rem;
-    margin-bottom: 15px;
-    color: var(--text-dark);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #1a1a1a;
 }
 
+/* Stile per il prezzo attuale */
 .modern-card .price {
-    color: var(--accent);
+    color: #e31d2b;
     font-weight: 800;
-    font-size: 1.4rem;
+    font-size: 1.3rem;
+}
+
+/* Stile per il prezzo barrato nelle offerte */
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.4;
+    font-size: 0.9rem;
+    margin-right: 5px;
+    color: #666;
 }
 
 /* ================= FOOTER ================= */
