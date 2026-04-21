@@ -2,11 +2,11 @@
 const vetrinaProductos = [
     { nombre: "Cnca Cola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Ají Amarillo", desc: "El alma andina", price: "€ 4.00", img: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=400&auto=format&fit=crop" },
-    { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://images.unsplash.com/photo-1530991473367-0eb5a9819fa1?q=80&w=400&auto=format&fit=crop" },
+    { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://www.bernabei.it/ARTICOLI/L_11386.png=crop" },
     { nombre: "Café Altomayo", desc: "Sabor de altura", price: "€ 7.50", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Chocolate Sublime", desc: "Cacao Puro", price: "€ 3.00", img: "https://images.unsplash.com/photo-1548907040-4baa42d10919?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Arroz Real", desc: "Súper alimento", price: "€ 6.50", img: "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=400&auto=format&fit=crop" },
-    { nombre: "Leche Gloria", desc: "Clásico peruano", price: "€ 1.80", img: "https://images.unsplash.com/photo-1550583724-1255d14265b3?q=80&w=400&auto=format&fit=crop" },
+    { nombre: "Leche Gloria", desc: "Clásico peruano", price: "€ 1.80", img: "https://vegaperu.vtexassets.com/arquivos/ids/166687-1200-auto?v=638532033956770000&width=1200&height=auto&aspect=true=crop" },
     { nombre: "Papa Amarilla", desc: "Sabor autóctono", price: "€ 2.20", img: "https://images.unsplash.com/photo-1518977676601-b53f82aba655?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Cerveza Cusqueña", desc: "La magia de los Andes", price: "€ 3.50", img: "https://images.unsplash.com/photo-1608270586620-248524c67de9?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Maíz Cancha", desc: "El snack perfecto", price: "€ 3.00", img: "https://images.unsplash.com/photo-1551754655-cd27e38d2076?q=80&w=400&auto=format&fit=crop" },
