@@ -409,3 +409,139 @@ footer {
         margin-bottom: 20px;
     }
 }
+
+/* --- NUOVI STILI PER IMMAGINI E GRIGLIA --- */
+
+/* Contenitore immagine per mantenere le proporzioni */
+.product-img-container {
+    width: 100%;
+    height: 120px; /* Altezza fissa su PC */
+    overflow: hidden;
+    border-radius: 18px;
+    margin-bottom: 12px;
+    background-color: #f8f9fa; /* Sfondo neutro mentre carica */
+}
+
+/* La foto vera e propria */
+.prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Taglia la foto senza schiacciarla */
+    transition: transform 0.5s ease;
+}
+
+/* Effetto zoom quando passi il mouse (solo PC) */
+.modern-card:hover .prod-img {
+    transform: scale(1.1);
+}
+
+/* Stile per il prezzo vecchio (sconto) */
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.5;
+    font-size: 0.85em;
+    margin-right: 5px;
+    color: var(--text-dark);
+}
+
+/* --- ADATTAMENTO SMARTPHONE (3 COLONNE) --- */
+@media (max-width: 768px) {
+    .modern-grid {
+        grid-template-columns: repeat(3, 1fr) !important; /* Forza 3 colonne */
+        gap: 8px !important; /* Spazio minimo tra prodotti */
+    }
+
+    .product-img-container {
+        height: 70px; /* Foto molto più basse su cellulare */
+        border-radius: 10px;
+    }
+
+    .modern-card {
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    .modern-card h3 {
+        font-size: 0.75rem !important; /* Testo piccolo per non andare a capo */
+        margin-bottom: 4px;
+        line-height: 1.1;
+    }
+
+    .product-desc {
+        display: none; /* Nascondiamo la descrizione su smartphone per pulizia */
+    }
+
+    .price {
+        font-size: 0.85rem !important;
+        font-weight: 800;
+    }
+}
+
+/* --- STILE IMMAGINI E PREZZI (PC & MOBILE) --- */
+.product-img-container {
+    width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    background: #f1f1f1;
+}
+
+.prod-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.old-price {
+    text-decoration: line-through;
+    opacity: 0.4;
+    font-size: 0.8em;
+    margin-right: 4px;
+}
+
+/* --- ADATTAMENTO ANDROID / SMARTPHONE (3 COLONNE) --- */
+@media (max-width: 768px) {
+    /* Layout Titoli e Bento */
+    .hero h1 { font-size: 2.2rem; }
+    .main-img { height: 140px !important; }
+    .bento-item.stat { height: 60px; flex-direction: row; }
+    .bento-item.stat .number { font-size: 1.8rem; }
+
+    /* Griglia a 3 Colonne */
+    .modern-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 8px !important;
+        padding: 5px;
+    }
+
+    /* Card rimpicciolite */
+    .modern-card {
+        padding: 8px !important;
+        border-radius: 12px !important;
+    }
+
+    .product-img-container {
+        height: 65px; /* Foto piccole per le 3 colonne */
+        border-radius: 8px;
+    }
+
+    .modern-card h3 {
+        font-size: 0.7rem !important; /* Testo mini per stare su una riga */
+        margin-bottom: 4px;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Aggiunge "..." se il nome è troppo lungo */
+    }
+
+    .product-desc {
+        display: none; /* Nascondi descrizione su mobile per pulizia */
+    }
+
+    .price {
+        font-size: 0.8rem !important;
+        font-weight: 800;
+    }
+}
