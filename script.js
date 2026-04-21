@@ -1,6 +1,6 @@
 // Database dei prodotti in Vetrina con immagini reali
 const vetrinaProductos = [
-    { nombre: "Inca Kola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
+    { nombre: "Cnca Cola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Ají Amarillo", desc: "El alma andina", price: "€ 4.00", img: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://images.unsplash.com/photo-1530991473367-0eb5a9819fa1?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Café Altomayo", desc: "Sabor de altura", price: "€ 7.50", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" },
@@ -14,7 +14,7 @@ const vetrinaProductos = [
     { nombre: "Palta", desc: "Tradición Navideña", price: "€ 12.00", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Menta", desc: "Elixir de planta", price: "€ 2.80", img: "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Galletas Casino", desc: "Menta y chocolate", price: "€ 1.20", img: "https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=400&auto=format&fit=crop" },
-    { nombre: "Rocoto Molido", desc: "Solo valientes", price: "€ 3.50", img: "https://images.unsplash.com/photo-1588252390740-9a4053916969?q=80&w=400&auto=format&fit=crop" },
+    { nombre: "Rocoto Fresco", desc: "Solo valientes", price: "€ 3.50", img: "https://www.lastranieraweb.it/779-thickbox_default/rocoto-fresco.jpg=crop" },
     { nombre: "Camote Amarillo", desc: "Dulzura natural", price: "€ 2.50", img: "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Tallarines", desc: "Legumbre de oro", price: "€ 4.20", img: "https://images.unsplash.com/photo-1551462147-ff29053bfc14?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Sal de Maras", desc: "Sal rosa milenaria", price: "€ 5.50", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop" }
