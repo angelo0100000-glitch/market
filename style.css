@@ -314,69 +314,98 @@ footer {
 
 /* ================= ADATTAMENTO RESPONSIVE 3 COLONNE ================= */
 
+/* ================= ADATTAMENTO SMARTPHONE COMPLETO E ORDINATO ================= */
+
 @media (max-width: 768px) {
-    /* 1. Titolo Hero più compatto */
+    /* 1. HERO SECTION (Titolo iniziale) */
     .hero h1 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+    }
+    .hero-badge {
+        font-size: 0.6rem;
+        padding: 5px 15px;
     }
 
-    /* 2. Bento Grid (Immagine Imperia) resta a 1 colonna per leggibilità */
+    /* 2. BENTO GRID (Immagine, Andes & Riviera, 100% Perù) */
     .bento-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr; /* Resta a 1 colonna ma riduciamo le altezze */
         grid-auto-rows: auto;
+        gap: 10px;
     }
 
-    /* 3. VETRINA SUPER COMPATTA: 3 PRODOTTI PER RIGA */
-    .modern-grid {
-        /* Forza 3 colonne */
-        grid-template-columns: repeat(3, 1fr) !important; 
-        gap: 8px; /* Spazio piccolissimo tra i prodotti */
+    /* Foto Imperia più piccola e ordinata */
+    .main-img {
+        height: 150px !important; 
+        border-radius: 20px;
+    }
+    .overlay {
+        font-size: 0.7rem;
+        padding: 5px 10px;
+        bottom: 10px;
+        left: 10px;
     }
 
-    /* Miniaturizzazione delle Card */
-    .modern-card {
-        padding: 8px; /* Spazio interno minimo */
-        border-radius: 12px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+    /* Box "Andes & Riviera" (Info) */
+    .bento-item.info {
+        padding: 15px;
+        border-radius: 20px;
     }
-
-    .modern-card .emoji {
-        font-size: 2rem; /* Emoji molto più piccoli */
+    .bento-item.info h2 {
+        font-size: 1.2rem; /* Titolo più piccolo */
         margin-bottom: 5px;
     }
-    
+    .bento-item.info p {
+        font-size: 0.8rem; /* Testo descrizione piccolo */
+    }
+
+    /* Box "100% Perù" (Stat) */
+    .bento-item.stat {
+        padding: 10px;
+        height: 80px; /* Molto più basso */
+        flex-direction: row; /* Mette numero e testo sulla stessa riga */
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        border-radius: 20px;
+    }
+    .bento-item.stat .number {
+        font-size: 2rem; /* Numero rimpicciolito */
+    }
+    .bento-item.stat .label {
+        font-size: 0.7rem;
+    }
+
+    /* 3. VETRINA PRODOTTI (3 COLONNE) */
+    .modern-grid {
+        grid-template-columns: repeat(3, 1fr) !important; 
+        gap: 8px;
+    }
+
+    .modern-card {
+        padding: 8px;
+        border-radius: 12px;
+    }
+
     .modern-card img {
-        height: 60px !important; /* Immagini molto basse per risparmiare spazio */
-        border-radius: 8px;
+        height: 65px !important;
         margin-bottom: 5px !important;
     }
 
     .modern-card h3 {
-        font-size: 0.75rem; /* Testo minuscolo per non andare a capo male */
-        margin-bottom: 4px;
-        font-weight: 600;
-        line-height: 1.1;
+        font-size: 0.7rem;
+        font-weight: 700;
     }
 
     .modern-card .price {
-        font-size: 0.85rem; /* Prezzo piccolo ma leggibile */
-        font-weight: 800;
+        font-size: 0.8rem;
     }
 
-    /* Riduciamo anche la sezione offerte per coerenza */
-    #offers-grid {
-        grid-template-columns: repeat(3, 1fr) !important;
-    }
-
-    /* 4. Footer e Titoli */
-    .section-title {
-        font-size: 1.8rem;
-        margin-bottom: 25px;
-    }
-
+    /* 4. SETTAGGI GENERALI */
     .container {
-        padding: 10px;
+        padding: 10px 15px;
+    }
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 20px;
     }
 }
