@@ -1,6 +1,6 @@
 // Database dei prodotti in Vetrina con immagini reali
 const vetrinaProductos = [
-    { nombre: "Cnca Cola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
+    { nombre: "Coca Cola 2L", desc: "La bebida del Perú", price: "€ 2.50", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Ají Amarillo", desc: "El alma andina", price: "€ 4.00", img: "https://images.unsplash.com/photo-1590779033100-9f60a05a013d?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Pisco Portón", desc: "Destilado Premium", price: "€ 35.00", img: "https://www.bernabei.it/ARTICOLI/L_11386.png=crop" },
     { nombre: "Café Altomayo", desc: "Sabor de altura", price: "€ 7.50", img: "https://images.unsplash.com/photo-1559056199-641a0ac8b55e?q=80&w=400&auto=format&fit=crop" },
