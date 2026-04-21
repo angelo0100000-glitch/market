@@ -19,89 +19,73 @@ const vetrinaProductos = [
     { nombre: "Frijol Canario", desc: "Legumbre de oro", price: "€ 4.20", img: "https://images.unsplash.com/photo-1551462147-ff29053bfc14?q=80&w=400&auto=format&fit=crop" },
     { nombre: "Sal de Maras", desc: "Sal rosa milenaria", price: "€ 5.50", img: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=400&auto=format&fit=crop" }
 ];
-// Funzione principale per inizializzare il sito
-function initModernSite() {
-    const grid = document.getElementById('product-grid');
-    if(!grid) return;
-    
-    // Iniezione dinamica dei prodotti
-    vetrinaProductos.forEach(p => {
-        const card = document.createElement('div');
-        card.className = 'modern-card reveal'; // Aggiungi classe 'reveal' per l'animazione
-        
-        card.innerHTML = `
-            <span class="emoji">${p.emoji}</span>
-            <h3>${p.nombre}</h3>
-            <p style="opacity:0.6; color:red; font-size:0.9rem; margin-bottom:15px">${p.desc}</p>
-            <p class="price">${p.price}</p>
-        `;
-        
-        grid.appendChild(card);
-    });
-
-    // CONFIGURAZIONE DELLE ANIMAZIONI AL SCROLL (Effetto Innovazione)
-    // Usiamo ScrollReveal.js (importato nell'HTML)
-    ScrollReveal().reveal('.reveal', {
-        distance: '60px', // Distanza del movimento
-        duration: 1200,    // Durata dell'animazione
-        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)', // Transizione morbida
-        interval: 150,     // Tempo tra un elemento e l'altro in griglia
-        origin: 'bottom',  // Da dove partono
-        opacity: 0,        // Partono invisibili
-        scale: 0.95        // Piccola variazione di scala
-    });
-}
-// Lista dedicada a Ofertas
+// 1. LISTA OFFERTE (Assicurati che sia definita prima della funzione init)
 const ofertasProductos = [
-    { nombre: "Pack Inca Kola (4 x 2L)", desc: "Ahorro familiar", price: "€ 8.00", oldPrice: "€ 10.00", emoji: "📦" },
-    { nombre: "Combo Ceviche", desc: "Ají + Limones + Sal", price: "€ 7.50", oldPrice: "€ 9.00", emoji: "🍋" },
-    { nombre: "Panetón + Chocolate", desc: "Pack Navideño", price: "€ 13.50", oldPrice: "€ 15.00", emoji: "🎁" }
+    { nombre: "Pack Inca Kola (4 x 2L)", desc: "Ahorro familiar", price: "€ 8.00", oldPrice: "€ 10.00", img: "https://images.unsplash.com/photo-1622483767028-3f66f32aef97?q=80&w=400" },
+    { nombre: "Combo Ceviche", desc: "Ají + Limones + Sal", price: "€ 7.50", oldPrice: "€ 9.00", img: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=400" },
+    { nombre: "Panetón + Chocolate", desc: "Pack Navideño", price: "€ 13.50", oldPrice: "€ 15.00", img: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=400" }
 ];
 
-// Modificamos la función init para cargar ambas listas
-function initModernSite() {
-    const mainGrid = document.getElementById('product-grid');
-    const offersGrid = document.getElementById('offers-grid');
-
-    // Cargar productos normales
-    vetrinaProductos.forEach(p => {
-        const card = createCard(p, "modern-card");
-        mainGrid.appendChild(card);
-    });
-
-    // Cargar ofertas
-    ofertasProductos.forEach(p => {
-        const card = createCard(p, "modern-card offer-card");
-        // Añadimos el precio antiguo si existe
-        if(p.oldPrice) {
-            const priceContainer = card.querySelector('.price');
-            priceContainer.innerHTML = `<span class="old-price">${p.oldPrice}</span> ${p.price}`;
-        }
-        offersGrid.appendChild(card);
-    });
-
-    // Reiniciar ScrollReveal para que detecte los nuevos elementos
-    ScrollReveal().reveal('.reveal', {
-        distance: '60px',
-        duration: 1200,
-        easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
-        interval: 150,
-        origin: 'bottom'
-    });
-}
-
-// Función auxiliar para crear la estructura de la tarjeta
+// 2. FUNZIONE AUSILIARIA PER CREARE LE CARD (Modificata per usare immagini)
 function createCard(p, className) {
     const div = document.createElement('div');
     div.className = className + " reveal";
+    
+    // Gestione del prezzo: se c'è oldPrice, lo aggiungiamo barrato
+    const priceHTML = p.oldPrice 
+        ? `<span class="old-price" style="text-decoration: line-through; opacity: 0.5; font-size: 0.8em; margin-right: 5px;">${p.oldPrice}</span> ${p.price}`
+        : p.price;
+
     div.innerHTML = `
-        <span class="emoji">${p.emoji}</span>
+        <div class="product-img-container">
+            <img src="${p.img}" alt="${p.nombre}" class="prod-img">
+        </div>
         <h3>${p.nombre}</h3>
-        <p style="opacity:0.6; color:#64748b; font-size:0.9rem; margin-bottom:15px">${p.desc}</p>
-        <p class="price">${p.price}</p>
+        <p style="opacity:0.6; color:#64748b; font-size:0.85rem; margin-bottom:15px">${p.desc}</p>
+        <p class="price">${priceHTML}</p>
     `;
     return div;
 }
 
-// Avvia tutto quando il DOM è pronto
+// 3. FUNZIONE PRINCIPALE DI INIZIALIZZAZIONE
+function initModernSite() {
+    const mainGrid = document.getElementById('product-grid');
+    const offersGrid = document.getElementById('offers-grid');
+
+    // Caricamento Prodotti Normali
+    if (mainGrid) {
+        mainGrid.innerHTML = ''; // Pulizia
+        vetrinaProductos.forEach(p => {
+            const card = createCard(p, "modern-card");
+            mainGrid.appendChild(card);
+        });
+    }
+
+    // Caricamento Offerte
+    if (offersGrid && typeof ofertasProductos !== 'undefined') {
+        offersGrid.innerHTML = ''; // Pulizia
+        ofertasProductos.forEach(p => {
+            // Se all'offerta manca l'immagine, ne mettiamo una generica
+            if(!p.img) p.img = "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?q=80&w=400";
+            
+            const card = createCard(p, "modern-card offer-card");
+            offersGrid.appendChild(card);
+        });
+    }
+
+    // CONFIGURAZIONE ANIMAZIONI (ScrollReveal)
+    if (typeof ScrollReveal !== 'undefined') {
+        ScrollReveal().reveal('.reveal', {
+            distance: '50px',
+            duration: 1000,
+            easing: 'cubic-bezier(0.165, 0.84, 0.44, 1)',
+            interval: 80, // Più veloce per smartphone
+            origin: 'bottom',
+            opacity: 0,
+            scale: 0.98
+        });
+    }
+}
+
+// 4. AVVIO AL CARICAMENTO
 document.addEventListener('DOMContentLoaded', initModernSite);
